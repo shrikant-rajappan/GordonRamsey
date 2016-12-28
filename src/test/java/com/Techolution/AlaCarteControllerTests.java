@@ -21,8 +21,8 @@ public class AlaCarteControllerTests {
 	}
 
 	@Test
-	//public static int knapSack(int T, int eatingTime[], int satisfaction[], int n)
-	public void knapSack()
+
+	public int knapSack()
 	{
 		int satisfaction[] = new int[]{60, 100, 120, 150};
 		int eatingTime[] = new int[]{10, 20, 30, 20};
@@ -47,7 +47,13 @@ public class AlaCarteControllerTests {
 			}
 		}
 
-		assertThat(220, equalTo(K[n][T]));
+		return(K[n][T]);
 	}
 
+	@Test
+	public static void main(String args[])
+	{
+		AlaCarteControllerTests fullMeals = new AlaCarteControllerTests();
+		assertThat(220, equalTo(fullMeals.knapSack()));
+	}
 }
