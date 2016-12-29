@@ -7,6 +7,7 @@ package com.Techolution;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @RequestMapping("/satisfied")
@@ -20,17 +21,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class AlaCarteController {
 
 
-    private final AlaCarte fullMeals;
+   public final AlaCarte fullMeals;
 
-    @Autowired
-    public AlaCarteController(AlaCarte fullMeals) {
+   @Autowired
+   public AlaCarteController(AlaCarte fullMeals) {
         this.fullMeals = fullMeals;
     }
 
     @RequestMapping("/")
     public int getResult() {
-        return fullMeals.knapSack();
-    }
+       return AlaCarte.knapSack();
+   }
 
 
 }
